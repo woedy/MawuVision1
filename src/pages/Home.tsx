@@ -95,6 +95,7 @@ export default function Home() {
         role="banner"
         aria-labelledby="hero-heading"
       >
+        {/* Hero Background with Parallax */}
         <motion.div
           className="absolute inset-0"
           style={{ y: parallaxY }}
@@ -102,48 +103,119 @@ export default function Home() {
           <img
             src="/assets/hero-background.jpeg"
             alt="Mawu Vision Hero Background"
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0B0C10]/20 via-[#0B0C10]/40 to-[#0B0C10]/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0B0C10]/90 via-[#0B0C10]/80 to-[#0B0C10]/90" />
         </motion.div>
 
-        {/* Floating Tech Icons */}
+        {/* Animated Orbs */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[
+            { color: 'from-blue-500/20 to-cyan-500/20', size: 'w-64 h-64', x: '10%', y: '20%' },
+            { color: 'from-purple-500/20 to-pink-500/20', size: 'w-96 h-96', x: '85%', y: '15%' },
+            { color: 'from-emerald-500/20 to-teal-500/20', size: 'w-80 h-80', x: '15%', y: '75%' },
+          ].map((orb, i) => (
+            <motion.div
+              key={i}
+              className={`absolute ${orb.size} rounded-full bg-gradient-to-br ${orb.color} blur-3xl`}
+              initial={{
+                x: orb.x,
+                y: orb.y,
+                scale: 0.8,
+              }}
+              animate={{
+                x: [orb.x, `calc(${orb.x} + 5%)`, orb.x],
+                y: [`calc(${orb.y} + 5%)`, orb.y, `calc(${orb.y} - 5%)`],
+                scale: [0.8, 1, 0.8],
+              }}
+              transition={{
+                duration: 10 + Math.random() * 10,
+                repeat: Infinity,
+                repeatType: 'reverse',
+                ease: 'easeInOut',
+                delay: i * 2,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Floating Tech Icons - Enhanced */}
         <div className="absolute inset-0 pointer-events-none">
           {[
-            { Icon: Shield, x: '10%', y: '20%', delay: 0 },
-            { Icon: Brain, x: '85%', y: '15%', delay: 0.5 },
-            { Icon: Server, x: '15%', y: '75%', delay: 1 },
-            { Icon: Lock, x: '80%', y: '80%', delay: 1.5 },
-            { Icon: Wifi, x: '50%', y: '10%', delay: 2 },
-            { Icon: Cpu, x: '25%', y: '50%', delay: 2.5 },
-            { Icon: Cloud, x: '75%', y: '45%', delay: 3 },
-          ].map(({ Icon, x, y, delay }, index) => (
+            { Icon: Shield, x: '10%', y: '20%', delay: 0, color: 'text-blue-400/30' },
+            { Icon: Brain, x: '85%', y: '15%', delay: 0.5, color: 'text-purple-400/30' },
+            { Icon: Server, x: '15%', y: '75%', delay: 1, color: 'text-cyan-400/30' },
+            { Icon: Lock, x: '80%', y: '80%', delay: 1.5, color: 'text-emerald-400/30' },
+            { Icon: Wifi, x: '50%', y: '10%', delay: 2, color: 'text-blue-400/30' },
+            { Icon: Cpu, x: '25%', y: '50%', delay: 2.5, color: 'text-purple-400/30' },
+            { Icon: Cloud, x: '75%', y: '45%', delay: 3, color: 'text-cyan-400/30' },
+            { Icon: Zap, x: '90%', y: '70%', delay: 3.5, color: 'text-emerald-400/30' },
+            { Icon: Target, x: '5%', y: '30%', delay: 4, color: 'text-blue-400/30' },
+          ].map(({ Icon, x, y, delay, color }, index) => (
             <motion.div
               key={index}
-              className="absolute text-[#00AEEF]/20 hidden sm:block"
+              className={`absolute ${color} hidden sm:block`}
               style={{
                 left: x,
                 top: y,
               }}
               initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
               animate={{
-                opacity: [0, 1, 1, 0],
-                scale: [0.8, 1.2, 1.2, 0.8],
+                opacity: [0, 0.7, 0.7, 0],
+                scale: [0.8, 1.3, 1.3, 0.8],
                 rotate: [0, 180, 360],
-                y: [0, -20, 0],
+                y: [0, -30, 0],
               }}
               transition={{
-                duration: 6,
-                delay,
+                duration: 8 + Math.random() * 4,
+                delay: delay,
                 repeat: Infinity,
                 repeatType: "loop",
                 ease: "easeInOut",
               }}
             >
-              <Icon size={32} className="sm:w-8 sm:h-8 md:w-10 md:h-10" />
+              <Icon size={40} className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
             </motion.div>
           ))}
         </div>
+
+        {/* Animated Connection Lines */}
+        <svg className="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+          {Array.from({ length: 8 }).map((_, i) => {
+            const x1 = Math.random() * 100;
+            const y1 = Math.random() * 100;
+            const x2 = x1 + (Math.random() * 40 - 20);
+            const y2 = y1 + (Math.random() * 40 - 20);
+            
+            return (
+              <motion.line
+                key={i}
+                x1={`${x1}%`}
+                y1={`${y1}%`}
+                x2={`${x2}%`}
+                y2={`${y2}%`}
+                stroke="url(#gradient)"
+                strokeWidth="0.5"
+                strokeDasharray="0 1"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={{ pathLength: 1, opacity: 0.3 }}
+                transition={{
+                  duration: 2,
+                  delay: i * 0.2,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  ease: "easeInOut"
+                }}
+              />
+            );
+          })}
+          <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#00AEEF" stopOpacity="0.5" />
+              <stop offset="100%" stopColor="#14B8A6" stopOpacity="0.5" />
+            </linearGradient>
+          </defs>
+        </svg>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
