@@ -86,6 +86,11 @@ export default function Home() {
       title: 'Result-Oriented',
       description: 'Focused on delivering measurable outcomes and business value.',
     },
+    {
+      icon: Cloud,
+      title: 'Cloud-Native',
+      description: 'Scalable solutions built for the modern cloud infrastructure.',
+    },
   ];
 
   return (
