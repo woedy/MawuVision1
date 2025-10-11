@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Cpu, Mail, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -8,7 +8,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <Cpu className="w-8 h-8 text-[#00AEEF]" />
+              <img
+                src="/assets/mawu-vision-logo.png"
+                alt="Mawu Vision Logo"
+                className="w-8 h-8"
+              />
               <span className="text-xl text-white">
                 <span className="font-bold">Mawu</span><span className="text-[#00AEEF]">Vision</span>
               </span>

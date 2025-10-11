@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Cpu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
@@ -22,10 +22,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="relative">
-              <Cpu className="w-8 h-8 text-[#00AEEF] group-hover:rotate-180 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-[#00AEEF] blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
-            </div>
+            <img
+              src="/assets/mawu-vision-logo.png"
+              alt="Mawu Vision Logo"
+              className="w-8 h-8 group-hover:scale-110 transition-transform duration-300"
+            />
             <span className="text-xl text-white">
               <span className="font-bold">Mawu</span><span className="text-[#00AEEF]">Vision</span>
             </span>
