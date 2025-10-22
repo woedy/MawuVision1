@@ -103,7 +103,7 @@ export default function Contact() {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1500));
       
-      const mailtoLink = `mailto:hello@mawuvision.com?subject=${encodeURIComponent(
+      const mailtoLink = `mailto:contact@mawuvision.com?subject=${encodeURIComponent(
         formData.subject
       )}&body=${encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
@@ -280,20 +280,26 @@ export default function Contact() {
     {
       icon: Mail,
       title: 'Email',
-      content: 'hello@mawuvision.com',
-      link: 'mailto:hello@mawuvision.com',
-    },
-    {
-      icon: MapPin,
-      title: 'Location',
-      content: 'Accra, Ghana',
-      link: null,
+      content: 'contact@mawuvision.com',
+      link: 'mailto:contact@mawuvision.com',
     },
     {
       icon: Phone,
       title: 'Phone',
-      content: '+233 XX XXX XXXX',
-      link: 'tel:+233XXXXXXXX',
+      content: '+1 (555) 123-4567',
+      link: 'tel:+15551234567',
+    },
+    {
+      icon: MapPin,
+      title: 'Headquarters',
+      content: '1629 K Street NW #300\nWashington, DC 20006\nUnited States',
+      link: null,
+    },
+    {
+      icon: MapPin,
+      title: 'Ghana Hub',
+      content: 'Before Hephzibah Christian Centre\nAburi, Eastern Region',
+      link: null,
     },
   ];
 
@@ -368,14 +374,14 @@ export default function Contact() {
                     <div>
                       <h3 className="font-medium text-white">{info.title}</h3>
                       {info.link ? (
-                        <a 
-                          href={info.link} 
+                        <a
+                          href={info.link}
                           className="text-gray-400 hover:text-[#00AEEF] transition-colors duration-200"
                         >
                           {info.content}
                         </a>
                       ) : (
-                        <p className="text-gray-400">{info.content}</p>
+                        <p className="text-gray-400 whitespace-pre-line">{info.content}</p>
                       )}
                     </div>
                   </motion.div>

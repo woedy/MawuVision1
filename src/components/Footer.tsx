@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Twitter, Github, Phone } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -58,11 +58,23 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start space-x-2 text-gray-400 text-sm">
                 <Mail className="w-5 h-5 text-[#00AEEF] flex-shrink-0" />
-                <span>hello@mawuvision.com</span>
+                <span>contact@mawuvision.com</span>
+              </li>
+              <li className="flex items-start space-x-2 text-gray-400 text-sm">
+                <Phone className="w-5 h-5 text-[#00AEEF] flex-shrink-0" />
+                <span>+1 (555) 123-4567</span>
               </li>
               <li className="flex items-start space-x-2 text-gray-400 text-sm">
                 <MapPin className="w-5 h-5 text-[#00AEEF] flex-shrink-0" />
-                <span>Accra, Ghana</span>
+                <span className="whitespace-pre-line">
+                  {`Headquarters\n1629 K Street NW #300\nWashington, DC 20006\nUnited States`}
+                </span>
+              </li>
+              <li className="flex items-start space-x-2 text-gray-400 text-sm">
+                <MapPin className="w-5 h-5 text-[#00AEEF] flex-shrink-0" />
+                <span className="whitespace-pre-line">
+                  {`Ghana Hub\nBefore Hephzibah Christian Centre\nAburi, Eastern Region`}
+                </span>
               </li>
             </ul>
             <div className="flex space-x-4 mt-4">
