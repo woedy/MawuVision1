@@ -30,18 +30,21 @@ export default function Services() {
           title: 'Software Development',
           description: 'Collaborative product prototyping and MVP builds that get ideas into the hands of users fast while keeping a clear path to scale.',
           features: ['Web Applications', 'Mobile Apps', 'Enterprise Software', 'API Development'],
+          status: 'Active pilots',
         },
         {
           icon: Cloud,
           title: 'Cloud Infrastructure',
           description: 'Lightweight, secure cloud setups for teams preparing for launch day, with an eye on the road to multi-region scale.',
           features: ['Cloud Migration', 'Infrastructure as Code', 'DevOps Solutions', 'Cloud Optimization'],
+          status: 'Accepting collaborators',
         },
         {
           icon: Settings,
           title: 'IT Consulting',
           description: 'Hands-on technical strategy support for founders and operators navigating their next build-or-buy decision.',
           features: ['Technology Strategy', 'Digital Transformation', 'System Architecture', 'Technical Audits'],
+          status: 'Limited availability',
         },
       ],
     },
@@ -56,18 +59,21 @@ export default function Services() {
           title: 'Vulnerability Assessments',
           description: 'Lightweight audits that surface the riskiest gaps and shape an achievable hardening roadmap.',
           features: ['Network Scanning', 'Web Application Testing', 'Risk Assessment', 'Remediation Planning'],
+          status: 'Active pilots',
         },
         {
           icon: Lock,
           title: 'Security Audits',
           description: 'Pragmatic reviews focused on the policies, tooling, and culture that keep early teams safe and compliant.',
           features: ['Compliance Audits', 'Penetration Testing', 'Security Policy Review', 'Incident Response Planning'],
+          status: 'Accepting collaborators',
         },
         {
           icon: Database,
           title: 'Data Protection',
           description: 'Prototyping encryption, backup, and retention approaches that balance resilience with scrappy execution.',
           features: ['Data Encryption', 'Backup & Recovery', 'Access Control', 'Data Loss Prevention'],
+          status: 'Designing with partners',
         },
       ],
     },
@@ -82,18 +88,21 @@ export default function Services() {
           title: 'Machine Learning & Automation',
           description: 'Rapid ML pilots that validate value using your data, then grow into production-ready workflows.',
           features: ['Predictive Analytics', 'Process Automation', 'Natural Language Processing', 'Recommendation Systems'],
+          status: 'In validation',
         },
         {
           icon: Eye,
           title: 'Computer Vision',
           description: 'Proofs of concept that teach cameras to understand the world around your product or facility.',
           features: ['Object Detection', 'Facial Recognition', 'Quality Inspection', 'Visual Search'],
+          status: 'Exploratory sprints',
         },
         {
           icon: Cpu,
           title: 'Intelligent Robotics Systems',
           description: "Longer-term R&D into autonomous systems that we're actively prototyping with select partners.",
           features: ['Autonomous Systems', 'Robotic Process Automation', 'IoT Integration', 'Smart Manufacturing'],
+          status: 'In discovery',
           comingSoon: true,
         },
       ],
@@ -109,21 +118,39 @@ export default function Services() {
           title: 'Payment Systems',
           description: 'Co-creating payment flows that feel seamless for users and stay compliant across regions.',
           features: ['Payment Gateway Integration', 'Digital Wallets', 'Multi-Currency Support', 'PCI DSS Compliance'],
+          status: 'Active pilots',
         },
         {
           icon: TrendingUp,
           title: 'Fraud Detection',
           description: 'Data-driven monitoring that learns from your transactions to flag anomalies before they become incidents.',
           features: ['Real-time Monitoring', 'Behavioral Analysis', 'Risk Scoring', 'Automated Alerts'],
+          status: 'Private beta',
         },
         {
           icon: Coins,
           title: 'Blockchain Integrations',
           description: 'Exploratory work on decentralized rails and tokenized assets—available for forward-looking pilots soon.',
           features: ['Smart Contracts', 'Cryptocurrency Integration', 'Decentralized Applications', 'Tokenization'],
+          status: 'In discovery',
           comingSoon: true,
         },
       ],
+    },
+  ];
+
+  const partnershipModels = [
+    {
+      title: 'Design partner labs',
+      description: 'Focused sprints where we workshop your problem statement, sketch experiments, and define responsible launch criteria together.',
+    },
+    {
+      title: 'Pilot implementation',
+      description: 'Hands-on build cycles that deliver a working prototype while documenting the security and scalability trade-offs we are making.',
+    },
+    {
+      title: 'Advisory cadence',
+      description: 'Bi-weekly sessions pairing your core team with our engineers and security leads to guide architecture decisions in real time.',
     },
   ];
 
@@ -202,6 +229,42 @@ export default function Services() {
           )}
         </div>
       </section>
+
+      {!isLoading && (
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#0B0C10]">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-14"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Partnering with us looks like...</h2>
+              <p className="text-gray-300 max-w-3xl mx-auto">
+                We tailor each engagement around the questions you need answered right now, keeping the loop tight and the documentation transparent.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {partnershipModels.map((model, index) => (
+                <motion.div
+                  key={model.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="h-full bg-gray-900/60 border border-gray-700 rounded-2xl p-8"
+                >
+                  <p className="text-sm uppercase tracking-wide text-[#14B8A6] mb-3">Model {index + 1}</p>
+                  <h3 className="text-xl font-semibold text-white mb-3">{model.title}</h3>
+                  <p className="text-gray-300 leading-relaxed">{model.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Filter and Search Controls */}
       {!isLoading && (
@@ -321,8 +384,15 @@ export default function Services() {
 
                       <div className="absolute inset-0 bg-gradient-to-br from-[#00AEEF]/5 to-[#14B8A6]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                      <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 relative z-10`}>
-                        <service.icon className="w-7 h-7 text-white" aria-hidden="true" />
+                      <div className="flex items-start justify-between mb-6">
+                        <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 relative z-10`}>
+                          <service.icon className="w-7 h-7 text-white" aria-hidden="true" />
+                        </div>
+                        {service.status && (
+                          <span className="ml-4 px-3 py-1 text-xs font-semibold uppercase tracking-wide bg-[#00AEEF]/15 text-[#7dd3fc] rounded-full">
+                            {service.status}
+                          </span>
+                        )}
                       </div>
 
                       <div className="relative z-10">
@@ -368,16 +438,16 @@ export default function Services() {
                 transition={{ duration: 0.6 }}
               >
                 <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-                  Ready to Get Started?
+                  Let's Explore a Pilot Together
                 </h2>
                 <p className="text-gray-300 text-base sm:text-lg mb-8">
-                  Let's discuss how our services can help you achieve your technology goals and drive business growth.
+                  Share what you're building and we'll co-design a lightweight experiment, clear success measures, and a path to scale if the pilot resonates.
                 </p>
                 <a
                   href="/contact"
                   className="inline-block px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-[#00AEEF] to-[#14B8A6] rounded-lg font-semibold text-white hover:shadow-lg hover:shadow-[#00AEEF]/50 hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#00AEEF]/50 text-sm sm:text-base"
                 >
-                  Contact Us Today
+                  Book a Pilot Intro
                 </a>
               </motion.div>
             </>

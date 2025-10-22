@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, Brain, Server, CreditCard, Zap, Target, Eye, Lock, Wifi, Cpu, Cloud } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 function AnimatedHeading() {
   const headingText = "Prototyping Intelligent, Secure, and Connected Systems";
@@ -42,6 +42,37 @@ export default function Home() {
 
     return () => clearTimeout(timer);
   }, []);
+
+  const orbConfigs = [
+    { color: 'from-blue-500/20 to-cyan-500/20', size: 'w-64 h-64', x: '10%', y: '20%', duration: 14 },
+    { color: 'from-purple-500/20 to-pink-500/20', size: 'w-96 h-96', x: '85%', y: '15%', duration: 18 },
+    { color: 'from-emerald-500/20 to-teal-500/20', size: 'w-80 h-80', x: '15%', y: '75%', duration: 16 },
+  ];
+
+  const floatingIconConfigs = [
+    { Icon: Shield, x: '10%', y: '20%', delay: 0, color: 'text-blue-400/30', duration: 10 },
+    { Icon: Brain, x: '85%', y: '15%', delay: 0.5, color: 'text-purple-400/30', duration: 11 },
+    { Icon: Server, x: '15%', y: '75%', delay: 1, color: 'text-cyan-400/30', duration: 12 },
+    { Icon: Lock, x: '80%', y: '80%', delay: 1.5, color: 'text-emerald-400/30', duration: 13 },
+    { Icon: Wifi, x: '50%', y: '10%', delay: 2, color: 'text-blue-400/30', duration: 14 },
+    { Icon: Cpu, x: '25%', y: '50%', delay: 2.5, color: 'text-purple-400/30', duration: 12 },
+    { Icon: Cloud, x: '75%', y: '45%', delay: 3, color: 'text-cyan-400/30', duration: 11 },
+    { Icon: Zap, x: '90%', y: '70%', delay: 3.5, color: 'text-emerald-400/30', duration: 13 },
+    { Icon: Target, x: '5%', y: '30%', delay: 4, color: 'text-blue-400/30', duration: 12 },
+  ];
+
+  const connectionLines = useMemo(
+    () =>
+      Array.from({ length: 8 }).map(() => {
+        const x1 = Math.random() * 100;
+        const y1 = Math.random() * 100;
+        const x2 = x1 + (Math.random() * 40 - 20);
+        const y2 = y1 + (Math.random() * 40 - 20);
+
+        return { x1, y1, x2, y2 };
+      }),
+    []
+  );
 
   const domains = [
     {
@@ -115,11 +146,7 @@ export default function Home() {
 
         {/* Animated Orbs */}
         <div className="absolute inset-0 overflow-hidden">
-          {[
-            { color: 'from-blue-500/20 to-cyan-500/20', size: 'w-64 h-64', x: '10%', y: '20%' },
-            { color: 'from-purple-500/20 to-pink-500/20', size: 'w-96 h-96', x: '85%', y: '15%' },
-            { color: 'from-emerald-500/20 to-teal-500/20', size: 'w-80 h-80', x: '15%', y: '75%' },
-          ].map((orb, i) => (
+          {orbConfigs.map((orb, i) => (
             <motion.div
               key={i}
               className={`absolute ${orb.size} rounded-full bg-gradient-to-br ${orb.color} blur-3xl`}
@@ -134,7 +161,7 @@ export default function Home() {
                 scale: [0.8, 1, 0.8],
               }}
               transition={{
-                duration: 10 + Math.random() * 10,
+                duration: orb.duration,
                 repeat: Infinity,
                 repeatType: 'reverse',
                 ease: 'easeInOut',
@@ -146,17 +173,7 @@ export default function Home() {
 
         {/* Floating Tech Icons - Enhanced */}
         <div className="absolute inset-0 pointer-events-none">
-          {[
-            { Icon: Shield, x: '10%', y: '20%', delay: 0, color: 'text-blue-400/30' },
-            { Icon: Brain, x: '85%', y: '15%', delay: 0.5, color: 'text-purple-400/30' },
-            { Icon: Server, x: '15%', y: '75%', delay: 1, color: 'text-cyan-400/30' },
-            { Icon: Lock, x: '80%', y: '80%', delay: 1.5, color: 'text-emerald-400/30' },
-            { Icon: Wifi, x: '50%', y: '10%', delay: 2, color: 'text-blue-400/30' },
-            { Icon: Cpu, x: '25%', y: '50%', delay: 2.5, color: 'text-purple-400/30' },
-            { Icon: Cloud, x: '75%', y: '45%', delay: 3, color: 'text-cyan-400/30' },
-            { Icon: Zap, x: '90%', y: '70%', delay: 3.5, color: 'text-emerald-400/30' },
-            { Icon: Target, x: '5%', y: '30%', delay: 4, color: 'text-blue-400/30' },
-          ].map(({ Icon, x, y, delay, color }, index) => (
+          {floatingIconConfigs.map(({ Icon, x, y, delay, color, duration }, index) => (
             <motion.div
               key={index}
               className={`absolute ${color} hidden sm:block`}
@@ -172,7 +189,7 @@ export default function Home() {
                 y: [0, -30, 0],
               }}
               transition={{
-                duration: 8 + Math.random() * 4,
+                duration,
                 delay: delay,
                 repeat: Infinity,
                 repeatType: "loop",
@@ -186,34 +203,27 @@ export default function Home() {
 
         {/* Animated Connection Lines */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
-          {Array.from({ length: 8 }).map((_, i) => {
-            const x1 = Math.random() * 100;
-            const y1 = Math.random() * 100;
-            const x2 = x1 + (Math.random() * 40 - 20);
-            const y2 = y1 + (Math.random() * 40 - 20);
-            
-            return (
-              <motion.line
-                key={i}
-                x1={`${x1}%`}
-                y1={`${y1}%`}
-                x2={`${x2}%`}
-                y2={`${y2}%`}
-                stroke="url(#gradient)"
-                strokeWidth="0.5"
-                strokeDasharray="0 1"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={{ pathLength: 1, opacity: 0.3 }}
-                transition={{
-                  duration: 2,
-                  delay: i * 0.2,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  ease: "easeInOut"
-                }}
-              />
-            );
-          })}
+          {connectionLines.map(({ x1, y1, x2, y2 }, i) => (
+            <motion.line
+              key={i}
+              x1={`${x1}%`}
+              y1={`${y1}%`}
+              x2={`${x2}%`}
+              y2={`${y2}%`}
+              stroke="url(#gradient)"
+              strokeWidth="0.5"
+              strokeDasharray="0 1"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 0.3 }}
+              transition={{
+                duration: 2,
+                delay: i * 0.2,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut"
+              }}
+            />
+          ))}
           <defs>
             <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#00AEEF" stopOpacity="0.5" />
@@ -397,6 +407,55 @@ export default function Home() {
 
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Signals from the Lab</h2>
+            <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+              A snapshot of the prototypes and partner collaborations shaping our roadmap right now.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {pilotSignals.map((signal, index) => (
+              <motion.article
+                key={signal.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="relative bg-gradient-to-br from-gray-800/60 to-gray-900/60 border border-gray-700 rounded-2xl p-8 overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-[#00AEEF]/10 to-[#14B8A6]/10 opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-2xl font-bold text-white">{signal.title}</h3>
+                    <span className="px-3 py-1 text-xs font-semibold uppercase tracking-wide bg-[#00AEEF]/20 text-[#7dd3fc] rounded-full">
+                      {signal.stage}
+                    </span>
+                  </div>
+                  <p className="text-gray-300 mb-6 leading-relaxed flex-1">{signal.description}</p>
+                  <ul className="space-y-2 text-sm text-gray-400">
+                    {signal.highlights.map((highlight, highlightIndex) => (
+                      <li key={highlightIndex} className="flex items-center space-x-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#14B8A6]" aria-hidden="true" />
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -445,6 +504,22 @@ export default function Home() {
             <p className="text-gray-300 text-lg mb-8">
               We're lining up pilot collaborations and would love to learn about the problems you're exploring next.
             </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-10">
+              {upcomingMilestones.map((milestone, index) => (
+                <motion.div
+                  key={milestone.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-[#0B0C10]/60 border border-[#00AEEF]/20 rounded-xl p-5"
+                >
+                  <p className="text-sm uppercase tracking-wide text-[#00AEEF] mb-2">{milestone.timing}</p>
+                  <h3 className="text-xl font-semibold text-white mb-2">{milestone.title}</h3>
+                  <p className="text-gray-300 text-sm">{milestone.description}</p>
+                </motion.div>
+              ))}
+            </div>
             <Link
               to="/contact"
               className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#00AEEF] to-[#14B8A6] rounded-lg font-semibold text-white hover:shadow-lg hover:shadow-[#00AEEF]/50 transition-all duration-300"

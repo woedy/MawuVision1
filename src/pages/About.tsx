@@ -48,6 +48,39 @@ export default function About() {
     },
   ];
 
+  const collaborationApproach = [
+    {
+      title: 'Listen & co-discover',
+      description: 'We begin every engagement by mapping the problem space together and validating that we are solving the right pain first.',
+    },
+    {
+      title: 'Prototype responsibly',
+      description: 'Security reviews, compliance checkpoints, and ethical frameworks are built into every iteration no matter how early.',
+    },
+    {
+      title: 'Ship, learn, adapt',
+      description: 'We ship prototypes into the hands of real users quickly, collect feedback transparently, and pivot without ego.',
+    },
+  ];
+
+  const progressMarkers = [
+    {
+      label: 'Active pilots',
+      value: '3',
+      description: 'Security, AI, and fintech experiments running with our earliest collaborators.',
+    },
+    {
+      label: 'Playbooks drafted',
+      value: '5',
+      description: 'Living documents that capture what we are learning about secure product delivery and partner onboarding.',
+    },
+    {
+      label: 'Community check-ins',
+      value: 'Bi-weekly',
+      description: 'Open office hours for prospective partners and advisors to swap notes with the team.',
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-[#0B0C10] pt-16">
       <section
@@ -178,6 +211,54 @@ export default function About() {
                   </div>
                 </motion.div>
               </div>
+
+              <motion.section
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="bg-gradient-to-br from-[#00AEEF]/5 to-[#14B8A6]/5 border border-[#00AEEF]/20 rounded-3xl p-10 mb-16"
+              >
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10">
+                  <div className="lg:w-1/3">
+                    <h3 className="text-3xl font-bold text-white mb-4">How we collaborate with early partners</h3>
+                    <p className="text-gray-200">
+                      Every build is co-created. We stay close to the humans who will rely on the product and weave their insight into each sprint.
+                    </p>
+                  </div>
+                  <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    {collaborationApproach.map((approach, index) => (
+                      <div
+                        key={approach.title}
+                        className="bg-[#0B0C10]/70 border border-[#14B8A6]/20 rounded-2xl p-6 shadow-inner shadow-[#14B8A6]/5"
+                      >
+                        <p className="text-sm uppercase tracking-wide text-[#7dd3fc] mb-3">Step {index + 1}</p>
+                        <h4 className="text-xl font-semibold text-white mb-3">{approach.title}</h4>
+                        <p className="text-gray-300 text-sm leading-relaxed">{approach.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.section>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="grid grid-cols-1 sm:grid-cols-3 gap-6"
+              >
+                {progressMarkers.map((marker) => (
+                  <div
+                    key={marker.label}
+                    className="bg-gray-900/60 border border-gray-700 rounded-2xl p-6 text-center"
+                  >
+                    <p className="text-sm uppercase tracking-wide text-[#14B8A6] mb-2">{marker.label}</p>
+                    <p className="text-3xl font-bold text-white mb-2">{marker.value}</p>
+                    <p className="text-gray-300 text-sm">{marker.description}</p>
+                  </div>
+                ))}
+              </motion.div>
             </>
           )}
         </div>
