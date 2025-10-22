@@ -21,78 +21,78 @@ export default function Services() {
   const serviceCategories = [
     {
       category: 'Information Technology & Systems',
-      description: 'Comprehensive IT solutions that drive digital transformation and operational excellence.',
+      description: 'Co-designing the technical foundations early customers need to launch, learn, and iterate quickly.',
       color: 'from-blue-500 to-cyan-500',
       icon: Server,
       services: [
         {
           icon: Server,
           title: 'Software Development',
-          description: 'Custom software solutions tailored to your business needs. We build scalable, maintainable applications using modern frameworks and best practices.',
+          description: 'Collaborative product prototyping and MVP builds that get ideas into the hands of users fast while keeping a clear path to scale.',
           features: ['Web Applications', 'Mobile Apps', 'Enterprise Software', 'API Development'],
         },
         {
           icon: Cloud,
           title: 'Cloud Infrastructure',
-          description: 'Design, migration, and management of cloud infrastructure on AWS, Azure, and Google Cloud. Optimize costs while maximizing performance and reliability.',
+          description: 'Lightweight, secure cloud setups for teams preparing for launch day, with an eye on the road to multi-region scale.',
           features: ['Cloud Migration', 'Infrastructure as Code', 'DevOps Solutions', 'Cloud Optimization'],
         },
         {
           icon: Settings,
           title: 'IT Consulting',
-          description: 'Strategic technology consulting to align your IT investments with business objectives. We help you make informed decisions about technology adoption and digital transformation.',
+          description: 'Hands-on technical strategy support for founders and operators navigating their next build-or-buy decision.',
           features: ['Technology Strategy', 'Digital Transformation', 'System Architecture', 'Technical Audits'],
         },
       ],
     },
     {
       category: 'Cybersecurity',
-      description: 'Enterprise-grade security solutions to protect your digital assets and maintain compliance.',
+      description: 'Baking security into young products from day zero so teams can scale with confidence.',
       color: 'from-red-500 to-orange-500',
       icon: Shield,
       services: [
         {
           icon: Shield,
           title: 'Vulnerability Assessments',
-          description: 'Comprehensive security assessments to identify and prioritize vulnerabilities in your systems before attackers can exploit them.',
+          description: 'Lightweight audits that surface the riskiest gaps and shape an achievable hardening roadmap.',
           features: ['Network Scanning', 'Web Application Testing', 'Risk Assessment', 'Remediation Planning'],
         },
         {
           icon: Lock,
           title: 'Security Audits',
-          description: 'In-depth security audits to evaluate your security posture, compliance status, and identify areas for improvement in your security program.',
+          description: 'Pragmatic reviews focused on the policies, tooling, and culture that keep early teams safe and compliant.',
           features: ['Compliance Audits', 'Penetration Testing', 'Security Policy Review', 'Incident Response Planning'],
         },
         {
           icon: Database,
           title: 'Data Protection',
-          description: 'Advanced data protection strategies including encryption, backup solutions, and data loss prevention to keep your sensitive information secure.',
+          description: 'Prototyping encryption, backup, and retention approaches that balance resilience with scrappy execution.',
           features: ['Data Encryption', 'Backup & Recovery', 'Access Control', 'Data Loss Prevention'],
         },
       ],
     },
     {
       category: 'AI & Robotics',
-      description: 'Cutting-edge artificial intelligence and automation solutions for the future of work.',
+      description: 'Experiments at the intersection of machine intelligence and real-world operations.',
       color: 'from-purple-500 to-pink-500',
       icon: Brain,
       services: [
         {
           icon: Brain,
           title: 'Machine Learning & Automation',
-          description: 'Intelligent automation solutions powered by machine learning algorithms. Transform your operations with predictive analytics and automated decision-making.',
+          description: 'Rapid ML pilots that validate value using your data, then grow into production-ready workflows.',
           features: ['Predictive Analytics', 'Process Automation', 'Natural Language Processing', 'Recommendation Systems'],
         },
         {
           icon: Eye,
           title: 'Computer Vision',
-          description: 'Advanced computer vision systems for image and video analysis. Enable machines to understand and interpret visual information from the world.',
+          description: 'Proofs of concept that teach cameras to understand the world around your product or facility.',
           features: ['Object Detection', 'Facial Recognition', 'Quality Inspection', 'Visual Search'],
         },
         {
           icon: Cpu,
           title: 'Intelligent Robotics Systems',
-          description: 'Next-generation robotics solutions combining AI, sensors, and advanced control systems. Coming soon to revolutionize manufacturing and logistics.',
+          description: "Longer-term R&D into autonomous systems that we're actively prototyping with select partners.",
           features: ['Autonomous Systems', 'Robotic Process Automation', 'IoT Integration', 'Smart Manufacturing'],
           comingSoon: true,
         },
@@ -100,26 +100,26 @@ export default function Services() {
     },
     {
       category: 'Fintech Solutions',
-      description: 'Secure and innovative financial technology solutions for the digital economy.',
+      description: 'Designing trustworthy financial experiences for emerging digital products.',
       color: 'from-green-500 to-emerald-500',
       icon: CreditCard,
       services: [
         {
           icon: CreditCard,
           title: 'Payment Systems',
-          description: 'Robust payment processing solutions with support for multiple payment methods, currencies, and regulatory compliance across regions.',
+          description: 'Co-creating payment flows that feel seamless for users and stay compliant across regions.',
           features: ['Payment Gateway Integration', 'Digital Wallets', 'Multi-Currency Support', 'PCI DSS Compliance'],
         },
         {
           icon: TrendingUp,
           title: 'Fraud Detection',
-          description: 'AI-powered fraud detection systems that analyze transactions in real-time to identify and prevent fraudulent activities before they impact your business.',
+          description: 'Data-driven monitoring that learns from your transactions to flag anomalies before they become incidents.',
           features: ['Real-time Monitoring', 'Behavioral Analysis', 'Risk Scoring', 'Automated Alerts'],
         },
         {
           icon: Coins,
           title: 'Blockchain Integrations',
-          description: 'Secure blockchain solutions for transparent, immutable transactions. Coming soon to bring decentralized finance capabilities to your platform.',
+          description: 'Exploratory work on decentralized rails and tokenized assets—available for forward-looking pilots soon.',
           features: ['Smart Contracts', 'Cryptocurrency Integration', 'Decentralized Applications', 'Tokenization'],
           comingSoon: true,
         },
@@ -190,13 +190,13 @@ export default function Services() {
               className="text-center"
             >
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-                Our{' '}
+                What We're{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00AEEF] to-[#14B8A6]">
-                  Services
+                  Building
                 </span>
               </h1>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive technology solutions designed to transform your business and secure your digital future.
+                A glimpse into the concepts, prototypes, and capabilities we're validating with our earliest partners.
               </p>
             </motion.div>
           )}

@@ -20,25 +20,25 @@ export default function About() {
       name: 'Kwame Mensah',
       role: 'Founder & CEO',
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
-      bio: 'Visionary leader with 15+ years in enterprise technology and innovation.',
+      bio: 'Product strategist who has led rollouts across West Africa and now steers our experiments toward real customer wins.',
     },
     {
       name: 'Ama Osei',
       role: 'Chief Technology Officer',
       image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
-      bio: 'Expert in AI/ML systems and cloud architecture with a passion for scalable solutions.',
+      bio: 'Engineer obsessed with AI systems, prototyping cloud-native architectures that can grow with our pilots.',
     },
     {
       name: 'Kofi Asante',
       role: 'Head of Cybersecurity',
       image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80',
-      bio: 'Certified security professional specializing in penetration testing and threat analysis.',
+      bio: 'Security researcher ensuring every build starts with trustworthy defaults and pragmatic playbooks.',
     },
     {
       name: 'Akosua Boateng',
       role: 'Head of Fintech Solutions',
       image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80',
-      bio: 'Financial technology innovator with expertise in blockchain and payment systems.',
+      bio: 'Fintech product lead translating complex regulations into seamless user journeys and compliant stacks.',
     },
   ];
 
@@ -121,7 +121,7 @@ export default function About() {
                 </span>
               </h1>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                We are a forward-thinking technology company dedicated to shaping the future through intelligent, secure, and innovative solutions.
+                We're an early-stage studio experimenting with intelligent, secure, and connected solutions in partnership with the people who need them most.
               </p>
             </motion.div>
           )}
@@ -161,13 +161,13 @@ export default function About() {
                 <h2 className="text-4xl font-bold text-white mb-6 text-center" id="our-story-heading">Our Story</h2>
                 <div className="max-w-4xl mx-auto space-y-6 text-gray-300 text-lg leading-relaxed">
                   <p>
-                    Founded with a vision to revolutionize the technology landscape, Mawu Vision emerged from a simple yet powerful idea: technology should empower, protect, and inspire. Our journey began when a group of passionate technologists recognized the need for a company that could bridge the gap between cutting-edge innovation and practical business solutions.
+                    Mawu Vision started as a series of late-night whiteboard sessions between friends who saw the same gap: ambitious African teams needed partners willing to co-build the first version of bold ideas. Instead of waiting for perfect conditions, we chose to form a studio that could experiment alongside them.
                   </p>
                   <p>
-                    Today, Mawu Vision stands as a beacon of technological excellence, serving clients across multiple continents. We specialize in four core domains: Information Technology Systems, Cybersecurity, Artificial Intelligence & Robotics, and Fintech Solutions. Each of these areas represents not just our expertise, but our commitment to building a safer, smarter, and more connected world.
+                    We're still early in that journey. Right now our energy is centred on a handful of pilots across intelligent systems, cybersecurity, AI & robotics, and fintech. Each build is an experiment designed to learn quickly, protect users, and prepare for scale when the moment is right.
                   </p>
                   <p>
-                    What drives us is our unwavering belief in the power of ethical innovation. We don't just build technology—we build trust. Every solution we create is designed with security, scalability, and sustainability at its core. Our team of world-class engineers, designers, and strategists work tirelessly to ensure that our clients don't just keep up with the digital revolution—they lead it.
+                    Transparency, curiosity, and ethical innovation guide every decision. We share progress openly with our partners, invite critique, and iterate together until the solution feels inevitable. It's less about grand announcements and more about the relationships forged along the way.
                   </p>
                 </div>
               </motion.div>
@@ -184,7 +184,7 @@ export default function About() {
                   <div className="relative z-10">
                     <h3 className="text-3xl font-bold text-white mb-4 group-hover:text-[#00AEEF] transition-colors duration-300">Our Vision</h3>
                     <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
-                      To be recognized globally as the premier technology partner for organizations seeking to transform their operations through intelligent, secure, and innovative solutions. We envision a world where technology seamlessly integrates with human potential, creating opportunities for growth, protection, and prosperity across all industries and communities.
+                      We imagine a future where African-built technology earns global trust because it is thoughtful, resilient, and people-first. Our vision is to help chart that path by proving what small, curious teams can create together.
                     </p>
                   </div>
                 </motion.div>
@@ -200,7 +200,7 @@ export default function About() {
                   <div className="relative z-10">
                     <h3 className="text-3xl font-bold text-white mb-4 group-hover:text-[#14B8A6] transition-colors duration-300">Our Mission</h3>
                     <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
-                      To deliver world-class technology solutions that empower businesses to thrive in the digital age. We are committed to innovation without compromise, security without complexity, and results without excuses. Our mission is to be more than a service provider—we aim to be a trusted partner in our clients' success stories.
+                      Our mission is to stay close to the problems our partners face, prototype responsibly, and ship solutions that create momentum without pretending to be finished products.
                     </p>
                   </div>
                 </motion.div>
@@ -237,7 +237,7 @@ export default function About() {
               >
                 <h2 className="text-4xl font-bold text-white mb-4" id="values-heading">Our Core Values</h2>
                 <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                  These principles guide every decision we make and every solution we deliver.
+                  These principles keep us grounded while we learn in public and build alongside our community.
                 </p>
               </motion.div>
 
@@ -299,9 +299,9 @@ export default function About() {
                 transition={{ duration: 0.6 }}
                 className="text-center mb-16"
               >
-                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4" id="team-heading">Meet Our Leadership</h2>
+                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4" id="team-heading">Meet the Core Team</h2>
                 <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
-                  Our team of experienced professionals brings decades of combined expertise in technology, innovation, and business strategy.
+                  We're a small, hands-on crew bringing together product, engineering, security, and fintech backgrounds to build what comes next.
                 </p>
               </motion.div>
 
@@ -356,10 +356,10 @@ export default function About() {
                 transition={{ duration: 0.6 }}
               >
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6" id="cta-heading">
-                  Join Us on This Journey
+                  Build the Future with Us
                 </h2>
                 <p className="text-gray-300 text-base sm:text-lg mb-8">
-                  At Mawu Vision, we believe the future belongs to those who dare to innovate. Whether you're looking to transform your business or explore partnership opportunities, we'd love to hear from you.
+                  If you're curious about collaborating on early prototypes or want to swap notes on the problems you're tackling, let's connect.
                 </p>
               </motion.div>
             </>

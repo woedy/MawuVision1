@@ -330,7 +330,7 @@ export default function Contact() {
               </span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Have a project in mind or want to learn more about our services? We'd love to hear from you.
+              Exploring an idea, need a sounding board, or curious about our pilots? Drop us a note—we're all ears.
             </p>
           </motion.div>
         </div>
@@ -350,7 +350,7 @@ export default function Contact() {
             >
               <h2 className="text-3xl font-bold text-white">Contact Information</h2>
               <p className="text-gray-400">
-                Fill out the form and our team will get back to you within 24 hours.
+                Share as much context as you can and we'll respond within a couple of days with next steps.
               </p>
               
               <div className="space-y-6">

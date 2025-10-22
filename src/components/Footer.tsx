@@ -18,7 +18,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-gray-400 text-sm">
-              Building intelligent, secure, and connected futures through innovative technology solutions.
+              Early-stage technologists exploring intelligent, secure, and connected futures.
             </p>
           </div>
 
@@ -37,24 +37,19 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/services" className="text-gray-400 hover:text-[#00AEEF] transition-colors text-sm">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/projects" className="text-gray-400 hover:text-[#00AEEF] transition-colors text-sm">
-                  Projects
+                  What We Do
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">Services</h3>
+            <h3 className="text-white font-semibold mb-4">Focus Areas</h3>
             <ul className="space-y-2">
               <li className="text-gray-400 text-sm">IT Systems</li>
               <li className="text-gray-400 text-sm">Cybersecurity</li>
               <li className="text-gray-400 text-sm">AI & Robotics</li>
-              <li className="text-gray-400 text-sm">Fintech Solutions</li>
+              <li className="text-gray-400 text-sm">Fintech Experiments</li>
             </ul>
           </div>
 

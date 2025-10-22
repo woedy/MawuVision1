@@ -4,7 +4,7 @@ import { ArrowRight, Shield, Brain, Server, CreditCard, Zap, Target, Eye, Lock, 
 import { useState, useEffect } from 'react';
 
 function AnimatedHeading() {
-  const headingText = "Building Intelligent, Secure, and Connected Futures";
+  const headingText = "Prototyping Intelligent, Secure, and Connected Systems";
   const words = headingText.split(' ');
 
   return (
@@ -47,25 +47,25 @@ export default function Home() {
     {
       icon: Server,
       title: 'IT Systems',
-      description: 'Comprehensive software development, cloud infrastructure, and IT consulting services.',
+      description: 'MVP builds, integrations, and infrastructure decisions that set early teams up for rapid learning.',
       color: 'from-blue-500 to-cyan-500',
     },
     {
       icon: Shield,
       title: 'Cybersecurity',
-      description: 'Advanced security audits, vulnerability assessments, and data protection solutions.',
+      description: 'Security architecture and playbooks that feel right-sized today and still hold up tomorrow.',
       color: 'from-red-500 to-orange-500',
     },
     {
       icon: Brain,
       title: 'AI & Robotics',
-      description: 'Cutting-edge machine learning, computer vision, and intelligent automation systems.',
+      description: 'Applied research sprints exploring how intelligent systems can unlock new value for partners.',
       color: 'from-purple-500 to-pink-500',
     },
     {
       icon: CreditCard,
       title: 'Fintech',
-      description: 'Secure payment systems, AI-powered fraud detection, and blockchain integration.',
+      description: 'Designing trustworthy digital finance experiences for the next wave of products.',
       color: 'from-green-500 to-emerald-500',
     },
   ];
@@ -73,23 +73,23 @@ export default function Home() {
   const features = [
     {
       icon: Zap,
-      title: 'Innovation-Driven',
-      description: 'Leveraging cutting-edge technology to solve complex challenges.',
+      title: 'Builder Mentality',
+      description: 'We partner closely with teams to test, learn, and ship in fast, transparent cycles.',
     },
     {
       icon: Shield,
-      title: 'Security First',
-      description: 'Enterprise-grade security embedded in every solution we deliver.',
+      title: 'Security Obsessed',
+      description: 'Every experiment bakes in trust, compliance, and resilience from the start.',
     },
     {
       icon: Target,
-      title: 'Result-Oriented',
-      description: 'Focused on delivering measurable outcomes and business value.',
+      title: 'Outcome Focused',
+      description: 'We measure progress by the insight or traction unlocked for your customers.',
     },
     {
       icon: Cloud,
-      title: 'Cloud-Native',
-      description: 'Scalable solutions built for the modern cloud infrastructure.',
+      title: 'Future Ready',
+      description: 'Architectures that start lean but know exactly how they will scale when you need them to.',
     },
   ];
 
@@ -272,15 +272,15 @@ export default function Home() {
                 <AnimatedHeading />
 
                 <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                  <span className="font-bold">Mawu</span><span className="text-[#00AEEF]">Vision</span> empowers businesses with innovative technology solutions across IT systems, cybersecurity, AI, and fintech.
+                  <span className="font-bold">Mawu</span><span className="text-[#00AEEF]">Vision</span> is an early-stage team crafting intelligent, secure, and connected products alongside the partners who will use them first.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 sm:px-0">
                   <Link
                     to="/services"
                     className="group relative px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-[#00AEEF] to-[#14B8A6] rounded-lg font-semibold text-white hover:shadow-2xl hover:shadow-[#00AEEF]/60 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[#00AEEF]/50 transition-all duration-300 flex items-center justify-center overflow-hidden text-sm sm:text-base"
-                    aria-label="Explore Mawu Vision services and solutions"
+                    aria-label="See what Mawu Vision is building"
                   >
-                    <span className="relative z-10">Explore Services</span>
+                    <span className="relative z-10">See What We're Building</span>
                     <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform duration-300 relative z-10" aria-hidden="true" />
                     <div className="absolute inset-0 bg-gradient-to-r from-[#14B8A6] to-[#00AEEF] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </Link>
@@ -329,10 +329,10 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              What We Do
+              Focus Areas We're Exploring
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              We deliver world-class technology solutions across multiple domains, helping organizations transform and thrive in the digital age.
+              These are the problem spaces we're actively researching with early partners before unveiling full products.
             </p>
           </motion.div>
 
@@ -367,8 +367,11 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Why Choose Mawu Vision
+              How We Build Together
             </h2>
+            <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+              Our process is intentionally collaborative, blending structured experimentation with the guardrails ambitious startups need.
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto">
@@ -406,7 +409,7 @@ export default function Home() {
                 <h2 className="text-4xl font-bold text-white">Our Vision</h2>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed">
-                To be a global leader in technology innovation, creating intelligent systems that empower businesses, protect digital assets, and drive sustainable growth across industries. We envision a future where technology seamlessly integrates with human ambition to solve the world's most pressing challenges.
+                We're building toward a future where intelligent systems feel approachable, protective, and deeply human. Every prototype we release is a step toward that shared vision.
               </p>
             </motion.div>
 
@@ -421,7 +424,7 @@ export default function Home() {
                 <h2 className="text-4xl font-bold text-white">Our Mission</h2>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed">
-                To deliver cutting-edge technology solutions that are secure, intelligent, and impactful. We are committed to building systems that not only meet today's needs but anticipate tomorrow's challenges, helping our clients stay ahead in an ever-evolving digital landscape.
+                Our mission right now is simple: partner with brave teams to test ideas in the real world, learn fast, and evolve solutions that earn trust at scale.
               </p>
             </motion.div>
           </div>
@@ -437,16 +440,16 @@ export default function Home() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Transform Your Business?
+              Interested in Co-Building?
             </h2>
             <p className="text-gray-300 text-lg mb-8">
-              Let's discuss how Mawu Vision can help you achieve your technology goals.
+              We're lining up pilot collaborations and would love to learn about the problems you're exploring next.
             </p>
             <Link
               to="/contact"
               className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#00AEEF] to-[#14B8A6] rounded-lg font-semibold text-white hover:shadow-lg hover:shadow-[#00AEEF]/50 transition-all duration-300"
             >
-              Get In Touch
+              Start a Conversation
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
           </motion.div>
