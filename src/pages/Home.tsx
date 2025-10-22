@@ -124,6 +124,60 @@ export default function Home() {
     },
   ];
 
+  const pilotSignals = [
+    {
+      title: 'Secure Edge Gateways',
+      stage: 'In Field',
+      description:
+        'Deploying a lightweight cybersecurity layer with an early energy client to harden industrial IoT devices without disrupting operations.',
+      highlights: [
+        'Live across 40% of monitored endpoints',
+        'Automated anomaly alerts routed to existing tools',
+        'Co-designing playbooks with on-site engineers',
+      ],
+    },
+    {
+      title: 'AI Safety Copilot',
+      stage: 'Pilot',
+      description:
+        'Training a contextual assistant with a fintech design partner to flag risky scenarios and suggest compliant alternatives during product ideation.',
+      highlights: [
+        'Grounded in proprietary policy libraries',
+        'Weekly learning reviews with partner squads',
+        'Planning red-team exercises before wider rollout',
+      ],
+    },
+    {
+      title: 'Robotics Vision Stack',
+      stage: 'Lab',
+      description:
+        'Building a perception layer that helps mid-sized robotics teams accelerate environment mapping and reduce calibration time.',
+      highlights: [
+        'Synthetic data pipelines validated with two beta teams',
+        'Latency down 18% from baseline after latest sprint',
+        'Exploring integration with preferred hardware kits',
+      ],
+    },
+  ];
+
+  const upcomingMilestones = [
+    {
+      timing: 'Q2 2024',
+      title: 'Launch Partner Circle',
+      description: 'Opening three additional pilot slots for teams exploring secure AI deployments.',
+    },
+    {
+      timing: 'Q3 2024',
+      title: 'Field Notes Library',
+      description: 'Publishing anonymized learnings from current experiments to share what’s working.',
+    },
+    {
+      timing: 'Q4 2024',
+      title: 'Platform Foundations',
+      description: 'Translating repeatable pilot components into a shared services platform.',
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-[#0B0C10]">
       <section
