@@ -6,7 +6,6 @@ import { ScrollToTop } from './components/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
-import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 
 function App() {
@@ -32,12 +31,6 @@ function App() {
             <>
               <PageTitle title="Services" />
               <Services />
-            </>
-          } />
-          <Route path="/projects" element={
-            <>
-              <PageTitle title="Projects" />
-              <Projects />
             </>
           } />
           <Route path="/contact" element={

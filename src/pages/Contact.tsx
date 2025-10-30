@@ -103,7 +103,7 @@ export default function Contact() {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1500));
       
-      const mailtoLink = `mailto:hello@mawuvision.com?subject=${encodeURIComponent(
+      const mailtoLink = `mailto:contact@mawuvision.com?subject=${encodeURIComponent(
         formData.subject
       )}&body=${encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
@@ -156,7 +156,7 @@ export default function Contact() {
   }) => {
     const isTouched = touched[name];
     const error = errors[name];
-    const showError = isTouched && error;
+    const showError = Boolean(isTouched && error);
     
     const commonProps = {
       id: name,
@@ -170,7 +170,7 @@ export default function Contact() {
           : 'border-gray-700 focus:ring-[#00AEEF] focus:border-[#00AEEF]'
       } rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 transition-all duration-200`,
       required,
-      'aria-invalid': showError ? 'true' : 'false',
+      'aria-invalid': showError,
       'aria-describedby': showError ? `${name}-error` : undefined,
     };
     
@@ -280,20 +280,26 @@ export default function Contact() {
     {
       icon: Mail,
       title: 'Email',
-      content: 'hello@mawuvision.com',
-      link: 'mailto:hello@mawuvision.com',
-    },
-    {
-      icon: MapPin,
-      title: 'Location',
-      content: 'Accra, Ghana',
-      link: null,
+      content: 'contact@mawuvision.com',
+      link: 'mailto:contact@mawuvision.com',
     },
     {
       icon: Phone,
       title: 'Phone',
-      content: '+233 XX XXX XXXX',
-      link: 'tel:+233XXXXXXXX',
+      content: '+1 (555) 123-4567',
+      link: 'tel:+15551234567',
+    },
+    {
+      icon: MapPin,
+      title: 'Headquarters',
+      content: '1629 K Street NW #300, Washington, DC 20006, United States',
+      link: null,
+    },
+    {
+      icon: MapPin,
+      title: 'Ghana Hub',
+      content: 'Before Hephzibah Christian Centre, Aburi, Eastern Region, Ghana',
+      link: null,
     },
   ];
 

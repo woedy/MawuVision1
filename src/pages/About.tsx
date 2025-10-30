@@ -15,33 +15,6 @@ export default function About() {
 
     return () => clearTimeout(timer);
   }, []);
-  const team = [
-    {
-      name: 'Kwame Mensah',
-      role: 'Founder & CEO',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
-      bio: 'Visionary leader with 15+ years in enterprise technology and innovation.',
-    },
-    {
-      name: 'Ama Osei',
-      role: 'Chief Technology Officer',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
-      bio: 'Expert in AI/ML systems and cloud architecture with a passion for scalable solutions.',
-    },
-    {
-      name: 'Kofi Asante',
-      role: 'Head of Cybersecurity',
-      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80',
-      bio: 'Certified security professional specializing in penetration testing and threat analysis.',
-    },
-    {
-      name: 'Akosua Boateng',
-      role: 'Head of Fintech Solutions',
-      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80',
-      bio: 'Financial technology innovator with expertise in blockchain and payment systems.',
-    },
-  ];
-
   const values = [
     {
       icon: Lightbulb,
@@ -260,76 +233,6 @@ export default function About() {
                       </div>
                       <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#00AEEF] transition-colors duration-300" id={`value-${index}-title`}>{value.title}</h3>
                       <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">{value.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </>
-          )}
-        </div>
-      </section>
-
-      <section className="py-20 px-4 sm:px-6 lg:px-8" aria-labelledby="team-heading">
-        <div className="max-w-7xl mx-auto">
-          {isLoading ? (
-            // Loading Skeletons for Team Section
-            <>
-              <div className="text-center mb-16">
-                <div className="h-12 bg-gradient-to-r from-gray-700 to-gray-600 rounded-lg animate-pulse mb-4 mx-auto w-1/2"></div>
-                <div className="h-6 bg-gradient-to-r from-gray-700 to-gray-600 rounded animate-pulse mx-auto w-2/3"></div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {[...Array(4)].map((_, index) => (
-                  <div key={index} className="space-y-4">
-                    <div className="h-80 bg-gradient-to-r from-gray-700 to-gray-600 rounded-xl animate-pulse"></div>
-                    <div className="h-6 bg-gradient-to-r from-gray-700 to-gray-600 rounded animate-pulse"></div>
-                    <div className="h-4 bg-gradient-to-r from-gray-700 to-gray-600 rounded animate-pulse w-1/2"></div>
-                    <div className="h-4 bg-gradient-to-r from-gray-700 to-gray-600 rounded animate-pulse"></div>
-                  </div>
-                ))}
-              </div>
-            </>
-          ) : (
-            <>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="text-center mb-16"
-              >
-                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4" id="team-heading">Meet Our Leadership</h2>
-                <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
-                  Our team of experienced professionals brings decades of combined expertise in technology, innovation, and business strategy.
-                </p>
-              </motion.div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {team.map((member, index) => (
-                  <motion.div
-                    key={member.name}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="group relative focus-within:ring-2 focus-within:ring-[#00AEEF] focus-within:ring-offset-2 rounded-xl"
-                    role="article"
-                    aria-labelledby={`member-${index}-name`}
-                  >
-                    <div className="relative overflow-hidden rounded-xl mb-4 bg-gray-800">
-                      <img
-                        src={member.image}
-                        alt={`${member.name}, ${member.role}`}
-                        className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C10] via-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#00AEEF]/10 to-[#14B8A6]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-                    <div className="space-y-2">
-                      <h3 className="text-xl font-bold text-white group-hover:text-[#00AEEF] transition-colors duration-300" id={`member-${index}-name`}>{member.name}</h3>
-                      <p className="text-[#00AEEF] text-sm font-semibold group-hover:text-[#14B8A6] transition-colors duration-300">{member.role}</p>
-                      <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">{member.bio}</p>
                     </div>
                   </motion.div>
                 ))}

@@ -16,7 +16,6 @@ export function PageTitle({ title }: PageTitleProps) {
       '/': 'Innovative technology solutions for your business',
       '/about': 'Learn about Mawu Vision and our mission',
       '/services': 'Explore our professional services',
-      '/projects': 'Discover our latest projects and work',
       '/contact': 'Get in touch with our team'
     };
 
